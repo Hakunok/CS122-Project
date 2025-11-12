@@ -1,7 +1,12 @@
-__pycache__/
-
-.venv/
-
-.DS_Store
 .idea/
 .vscode/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+dist/
+build/
+*.spec
+.coverage

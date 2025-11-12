@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "whale"
+version = "0.1.0"
+authors = [
+  { name="Aekn Admal", email="aekn.admal@gmail.com" },
+  { name="Huy Tran", email="huytran8392@gmail.com" },
+]
+description = "A casino-themed roguelike dice-building game"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "arcade>=3,<4"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9"
+]
+
+[project.scripts]
+whale = "whale.main:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/whale"]
+include = ["src/whale/assets/**", "src/whale/content/**"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/whale/**", "README.md", "pyproject.toml", "tests/**"]
