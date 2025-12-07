@@ -3,10 +3,14 @@ from pathlib import Path
 from typing import Optional
 from core.game_state import GameEngine
 
-SAVE_PATH = Path("whale_save.json")
+PACKAGE_ROOT = Path(__file__).resolve().parents[1]
+
+DATA_DIR = PACKAGE_ROOT / "data"
+SAVE_PATH = DATA_DIR / "whale_save.json"
 
 def save_run(engine: GameEngine) -> None:
     data = engine.to_dict()
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     SAVE_PATH.write_text(json.dumps(data))
 
 def load_run() -> Optional[GameEngine]:
@@ -21,4 +25,3 @@ def has_save() -> bool:
 def clear_save() -> None:
     if SAVE_PATH.exists():
         SAVE_PATH.unlink()
-

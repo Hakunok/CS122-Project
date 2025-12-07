@@ -1,0 +1,15 @@
+arcade==3.3.3
+attrs==25.4.0
+cffi==2.0.0
+iniconfig==2.3.0
+packaging==25.0
+pillow==11.3.0
+pluggy==1.6.0
+pycparser==2.23
+pyglet==2.1.11
+Pygments==2.19.2
+pymunk==6.9.0
+pytest==8.4.2
+pytiled_parser==2.2.9
+typing_extensions==4.15.0
+-e git+ssh://git@github.com/Hakunok/CS122-Project.git@68d4aa85d371966836ae0b6a903295441cfc819b#egg=whale
